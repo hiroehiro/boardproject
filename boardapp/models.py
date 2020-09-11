@@ -7,7 +7,7 @@ class BoardModel(models.Model):
     content=models.TextField()
     author=models.CharField(max_length=100)
     images=models.ImageField(upload_to="")
-    good=models.IntegerField()
-    read=models.IntegerField() #既読した人数
-    readtext=models.CharField(max_length=200) #既読した人の名前を保管
+    good=models.IntegerField(null=True,blank=True,default=0)
+    read=models.IntegerField(null=True,blank=True,default=0) #既読した人数
+    readtext=models.CharField(max_length=200,null=True,blank=True,default="a") #既読した人の名前を保管
     
